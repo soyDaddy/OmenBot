@@ -1,0 +1,70 @@
+{
+    "normal": {
+        "error": "❌",
+        "check": "✔️",
+        "music": "🎵",
+        "volume": "🔉",
+        "ball": "🎱",
+        "christmas": "🎄",
+        "heart": "❤️",
+        "paper": "📰",
+        "scissors": "✂️",
+        "stone": "🪨",
+        "pong": "🏓",
+        "birthday": "🎂",
+        "clock": "⏰",
+        "gift": "🎁",
+        "medal": "🏅",
+        "party": "🎉",
+        "info": "ℹ️",
+        "arrowDown": "⬇️",
+        "arrowUp": "⬆️",
+        "dcredits": "💳",
+        "tv": "📺",
+        "slash": ""
+    },
+
+    "Bot": {
+        "add": "📥",
+        "info": "ℹ️",
+        "min": "🔻"
+    },
+
+    "economy": {
+        "pocket": "👛",
+        "bank": "🏦",
+        "coins": "💰"
+    },
+
+    "music": {
+        "next": "⏭️",
+        "pause": "⏸️",
+        "previous": "⏮️",
+        "stop": "⏹️",
+        "play": "▶️"
+    },
+
+    "badges": {
+        "developer": "<:dev:1159202777390665738>",	
+        "event": "<:events:1159205226256023574>",
+        "booster": "<:boost:1159202766758097048>",
+        "bug": "<:bug:1159205220442722385>",
+        "management": "<:manage:1159202771594133575>",
+        "premium": "<:prem:1159202773540274406>",
+        "supporter": "<:supp:1159202768523898933>",
+        "team": "<:team:1159205222363701368>",
+        "partner": "<:partner:1159205217594781756>",
+        "voter": "<:voter:1159205215547949087>",
+        "support": "<:support:1159202763901775913>",
+        "moderator": "<:mod:1159202775805214741>",
+        "designer": "<:designer:1159205213350137856>",
+        "marketing": "<:marketing:1159205211626274987>",
+        "active": "<:active:1159205208572821575>",
+        "vip": "<:VIP:1159205224758640681>",
+        "bot": "<:bot:1159205229716328620>"
+    },
+
+    "animated": {
+        "loading": "🔄️"
+    }
+}
