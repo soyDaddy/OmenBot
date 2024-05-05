@@ -1,6 +1,6 @@
 {
   "name": "omenbot",
-  "version": "1.0.0-Beta",
+  "version": "v1.0.0-Beta",
   "description": "Discord Bot",
   "main": "./src/index.js",
   "scripts": {
