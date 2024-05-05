@@ -20,7 +20,6 @@ const Schema17 = require("../../database/models/levelChannels");
 const Schema18 = require("../../database/models/levelRewards");
 const Schema19 = require("../../database/models/logChannels");
 const Schema20 = require("../../database/models/messages");
-const Schema21 = require("../../database/models/music");
 const Schema23 = require("../../database/models/notes");
 const Schema25 = require("../../database/models/privatechannels");
 const Schema27 = require("../../database/models/reactionRoles");
