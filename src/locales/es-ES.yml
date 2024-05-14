@@ -1,101 +1,259 @@
 
 ## Command Response ##
-
-message:
-  select: ❌┇Nada Seleccionado
-  errnormal: Algo ha salido mal
-  errusage:
-    desc: No has usado correctamente el comando
-    field: 💬┆Se requiren argumentos
-  errmissperms:
-    desc: No tienes los permisos necesarios
-    field: 🔑┆Permisos Necesarios
-  errbotperms:
-    des: No tengo los permisos necesarios
-    field: 🔑┆Permisos Necesarios
-  command:
-    suggestion: 
-      done: Sistema de Sugerencias establecido correctamente en 
-      embed: 
-        title: • Nueva Sugerencia
-        fields:
-          f1:
-            name: • A Favor
-            value: "> **Sin Votos**"
-          f2:
-            name: • En Contra
-            value: "> **Sin Votos**"
-          f3: 
-            name: • Autor
-        footer: 🤚 Sugerencia Iniciada
-        button: • Votos
-        thread: Discusión Sugerencia de
-      vote:
-        name: Votos
-        yourself: ❌ **No puedes** votar en tu propia **Votación**!
-        again: ❌ **Ya has** votado en esta **Votación**
-      votes: 
+help:
+  menu:
+    options:
+      select: • Selecciona un menu
+      helpCenter:
         embed:
-          title: "> Sugerencia"
-          author: 🤚 Sistema de Sugerencias
-          footer: 🤚 Sugerencia Miembros
+          title: 🧩 • Centro de Ayuda
+          footer: 🧩 Centro de Ayuda || OmenBot
+          fields:
+            f1: 
+              name: • Centro de Ayuda
+              value: "> Muestra este menu."
+            f2:
+              name: • API
+              value: "> Obtén información de la API."
+            f3:
+              name: • Comandos
+              value: "> Obtén la información de los comandos."
+              
+        label: • Centro de Ayuda
+        description: Ve a la pagina del centro de ayuda.
+      api:
+        embed:
+          title: • Pagina de info de la API
+          footer: 🧩 Pagina de info de la API
           fields:
             f1:
-              name: • A Favor
-              value: Sin Votos A Favor
+              name: • Info Basica de la API
+              value: "> Name: OmenList API\n> URL: [api.omenlist.xyz](https://api.omenlist.xyz)\n> Version: 5.3"
             f2:
-              name: • En Contra
-              value: Sin Votos En Contra
+              name: • API Status Info
+              value: "> Status: **Online**\n> Ping: **{ping} ms**\n> Uptime: **{uptime}**"
+              valueError: "> Status: **Offline**\n> Ping: **Errored**"
+        label: • API
+        description: Navigate to the API information page.
+      commands:
+        label: • Commands
+        description: Navigate to the Bot commands page.
+birthday:
+  embed:
+    title: 🎉 ¡Happy Birthday!
+    desc: This is the birthday of **{user}**
+tickets:
+  action:
+    transcript:
+      embed:
+        title: "🎫・Transcript"
+        desc: "{emoji}・Saving transcription..."
+        save: "Transcript Saved"
+    rename:
+      embed:
+        title: "🎫・Ticket Info"
+        field1: "Ticket Renamed By"
+        field2: "Old Ticket Name"
+        field3: "New Ticket Name"
+    remove:
+      embed:
+        title: "🎫・Ticket Info"
+        desc: "User **{target}** was removed from the ticket by **<@{user}>**"
+    raise:
+      embed:
+        title: "🎫・Ticket Raised"
+        desc: "Ticket raised by **{user}**"
+    notice:
+      title: "⚠️・Notice"
+      desc: "Hi {user}, \n\nCan we still help you?\nIf you don't respond in less than **24 hours**, we will close the ticket\n\n- {guild} || Support"
+    lower:
+      title: "Ticket Demoted"
+      desc: "This ticket was demoted by **<@{user}>**"
+    info:
+      embed:
+        title: "Ticket Info"
+        fields:
+          name: "Ticket Name"
+          id: "Ticket ID"
+          created: "Created by"
+          claimed: "Claimed by"
+          channel: "Channel ID"
+    delete:
+      title: "⚠️・Ticket Deleted"
+      desc: "The Ticket has been deleted in **5s**"
+    create:
+      title: "⚙️・Ticket Created"
+      desc: "Your ticket has been created"
+      fields:
+        f1: 👤┆ Creator
+        f2: 📂┆ Channel
+        f3: ⏰┆ Date Creation
+      progress:
+        title: "{emoji}・ Progreso"
+        desc: You'r ticket will be open soon...
+    open:
+      embed:
+        title: "🔒・Ticket Opened"
+        reopen: "🔒・Ticket Reopened"
+        itsopen: "🔒・This ticket is already open"
+        desc: "Thank's for opening a ticket, our staff team will be there soon!\n\n🔒 - Close Ticket\n✋ - Claim Ticket\n📝 - Save Transcription\n🔔 - Notify User"
+    close: 
+      embedDM:
+        title: 🔒・Ticket Closed
+        msg: This is the ticket info and the ticket transcription
+        fields:
+          f1:
+            name: 👤┆ Closed by
+          f2:
+            name: 📄┆ Ticket ID
+          f3:
+            name: 💬┆ Server
+          f4:
+            name: 🔗┆ Transcription
+            value: "[Transcription URL]({transcriptURL})"
+      embedLogs:
+        title: 🔒・Ticket Closed
+        desc: This is the ticket info and the ticket transcription
+        fields:
+          f1:
+            name: 📘┆ Ticket ID
+          f2:
+            name: 👤┆ Closed by
+          f3: 
+            name: 👤┆ Opened by
+          f4: 
+            name: ✋┆ Claimed by
+          f5: 
+            name: ⏰┆ Date
+          f6: 
+            name: 🔗┆ Transcription
+            value: "[Transcription URL]({transcriptURL})"
+      embed:
+        title: 🔒・Ticket Closed
+        desc: "📝 - Save Transcription\n🔓 - Reopen Ticket\n⛔ - Delete Ticket"
+    title: Ticket System
+    unclaim: This ticket can be claimed again
+    claimed: "This ticket has been claimed, you will be assisted by <@{userId}>"
+    add: "Invited <@{user}> to this ticket"
+  err:
+    title: An error has occurred
+    claim: \`❌\`This ticket was no claimed
+    claimed: \`❌\`This ticket was already claimed
+    setup: \`❌\`The ticket system was no setup
+    closed: \`❌\`This ticket was already closed
+    noticket: \`❌\`This is not a ticket
+    noclaimed: \`❌\`You were not claimed this ticket
+    limit: \`❌\`You have reached the limit of tickets
+    noreason: No reason given
+    error: \`❌\`An error has occurred
+    open: \`❌\`Dont open this ticket
+    remove: \`❌\`Dont remove the Ticket Owner
+message:
+  error:
+    embed:
+      des: An error has occurred
+      fields:
+        f1:
+          name: ❌┇Error Code
+        f2: 
+          name: ❌┇What do now?
+          value: Try again later or join to de support server and report this error!
+  event:
+    guildCreate:
+      title: Thanks for invite OmenBot to your server!
+      desc: We apreciate you to decide to use OmenBot on your server!
+      field:
+        name: 📨┆ Invite OmenBot to other server
+        value: Invite it by [clicking here](https://discord.com/oauth2/authorize?&client_id=1066471348282605700&scope=applications.commands+bot&permissions=8)
+      button1: Invite
+      button2: Support Server
+      button3: Web Page
+  select: ❌┇Nothing Selected 
+  errnormal: Something went wrong
+  errusage:
+    desc: You dont used correctly the command
+    field: 💬┆Necesary args
+  errmissperms:
+    desc: You don't have the correct permissions
+    field: 🔑┆Permissions necesaries
+  errbotperms:
+    des: I don't have the necesary permissions
+    field: 🔑┆Permisions necesaries
+  command:
+    suggestion: 
+      done: Suggestion Systen setuped on
+      embed: 
+        title: • New Suggestion
+        fields:
+          f1:
+            name: • Up Votes
+            value: "> **Without Votes**"
+          f2:
+            name: • Down Votes
+            value: "> **Without Votes**"
+          f3: 
+            name: • Author
+        footer: 🤚 Suggestion Started
+        button: • Votes
+        thread: Suggestion of 
+      vote:
+        name: Votes
+        yourself: ❌ **You can't** vote your own **Suggestion**!
+        again: ❌ **You already** voted this **Suggestion**
+      votes: 
+        embed:
+          title: "> Suggestion"
+          author: 🤚 Suggestion System
+          footer: 🤚 Member Suggestion
+          fields:
+            f1:
+              name: • Up Votes
+              value: Without Votes
+            f2:
+              name: • Down Votes
+              value: Without Votes
     setverify:
       embed:
-        title: ・Sistema de Verificación
-        desc: Haz click en el botón de abajo para verificarte.
+        title: ・Verification System
+        desc: Click on the button to verify yourself
     help:
       menu:
-        placeholder: ❌ ┆ Nada Seleccionado
+        placeholder: ❌ ┆ Nothing Selected
         options:
           commands:
-            label: Comandos
-            description: Mira los comandos de OmenBot!
+            label: Commands
+            description: Show the commands of OmenBot!
           invite:
-            label: Invitar
-            description: Invita a OmenBot a tu servidor!
+            label: Invite
+            description: Invite OmenBot to your server!
           support:
-            label: Servidor de Soporte
-            description: Únete a nuestro servidor de Soporte
+            label: Server Support
+            description: Join the Server Support
           changelog:
-            label: Registro de Cambios
-            description: Mira el registro de cambios de OmenBot
+            label: ChangeLog
+            description: Show the ChangeLog of OmenBot
       embed:
-        title: ❓・Panel de Ayuda
-        description: Bienvenido al panel de Ayuda de OmenBot! Hemos echo un pequeño comando para que pueda ayudarte! Selecciona alguna opción de abajo.
-        description2: Mira todas las categorias de comandos que tiene OmenBot!
-        fields: 
-          name1: ❌ ┆ No funciona el menú?
-          value1: Prueba a volver a enviar el comando, si sigue sin funcionar, reportalo como bug!
-          name2: 🪲 ┆ Has encontrado un bug?
-          value2: Reportalo usando </report:1148392150762000419> y selecciona la opción de bug.
-          name3: 🔗 ┆ Enlaces
-          value3: '[Página WEb](https://omenbot.com/) (En Desarollo) | [Invitar](https://discord.com/api/oauth2/authorize?client_id=1066471348282605700&permissions=8&scope=bot%20applications.commands)'
+        title: • Commands
+        description2: View all command categories in the bot here!
     commands:
       fields:
         f1:
-          name: 📺 ┆ Actividades
+          name: 📺 ┆ Activities
           value: </activities:1148392149797310464>
         f2:
           name: 🚫 ┆ AFK
           value: </afk help:1148392149797310465>
         f3:
-          name: 📣 ┆ Anuncios
+          name: 📣 ┆ Announcement
           value: </announcement help:1148392149797310466>
         f4:
           name: 👮‍♂️ ┆ Auto mod
           value: </automod help:1148392149797310467>
         f5:
-          name: ⚙️ ┆ Auto Configuración
+          name: ⚙️ ┆ Auto setup
           value: </autosetup help:1148392149797310468>
         f6:
-          name: 🎂 ┆ Cumpleaños
+          name: 🎂 ┆ Birthday
           value: </cumple help:1148392149797310473>
         f7:
           name: 🤖 ┆ Bot
@@ -104,408 +262,412 @@ message:
           name: 🎰 ┆ Casino
           value: </casino help:1148392149797310470>
         f9:
-          name: ⚙ ┆ Configuración
+          name: ⚙ ┆ Configuration
           value: </config help:1148392149797310472>
         f10:
-          name: 💻 ┆ Comandos Personalizados
+          name: 💻 ┆ Custom commands
           value: </custom-commands help:1148392149797310471>
         f11:
-          name: 💳 ┆ OCredits
+          name: 💳 ┆ Dcredits
           value: </dcredits:0>
         f12:
-          name: 💰 ┆ Economia
+          name: 💰 ┆ Economy
           value: </economy help:1148392150128664678>
         f13:
-          name: 👪 ┆ Familia
+          name: 👪 ┆ Family
           value: </family help:1148392150128664681>
         f14:
-          name: 😂 ┆ Diversión
+          name: 😂 ┆ Fun
           value: </fun help:1148392150128664682>
         f15:
-          name: 🎮 ┆ Juegos
+          name: 🎮 ┆ Games
           value: </games help:1148392150128664683>
         f16:
-          name: 🥳 ┆ Sorteos
+          name: 🥳 ┆ Giveaway
           value: </giveaway help:1148392150128664684>
         f17:
-          name: ⚙️ ┆ Ajustes del Servidor
+          name: ⚙️ ┆ Guild settings
           value: </guild help:1148392150128664686>
         f18:
-          name: 🖼 ┆ Imagenes
+          name: 🖼 ┆ Images
           value: </images help:1148392150338387979>
         f19:
-          name: 📨 ┆ Invitaciones
+          name: 📨 ┆ Invites
           value: </invites help:1148392150338387981>
         f20:
-          name: 🆙 ┆ Niveles
+          name: 🆙 ┆ Leveling
           value: </levels help:1148392150338387982>
         f21:
-          name: 💬 ┆ Mensajes
+          name: 💬 ┆ Messages
           value: </messages help:1148392150338387984>
         f22:
-          name: 👔 ┆ Moderación
+          name: 👔 ┆ Moderation
           value: </moderation help:1148392150338387985>
         f23:
-          name: 🎶 ┆ Música
+          name: 🎶 ┆ Music
           value: </music help:1148392150338387986>
         f24:
-          name: 📓 ┆ Notas
+          name: 📓 ┆ Notepad
           value: </notepad help:1148392150338387987>
         f25:
-          name: 👤 ┆ Perfil
+          name: 👤 ┆ Profile
           value: </profile help:1148392150762000415>
         f26:
-          name: 📻 ┆ Rádio
+          name: 📻 ┆ Radio
           value: </radio help:1148392150762000416>
         f27:
-          name: 😛 ┆ Roles de Reacción
+          name: 😛 ┆ Reaction roles
           value: </reactionroles help:1148392150762000417>
         f28:
-          name: 🔍 ┆ Búsqueda
+          name: 🔍 ┆ Search
           value: </search help:1148392150762000420>
         f29:
-          name: 📊 ┆ Estadisticas del Servidor
+          name: 📊 ┆ Server stats
           value: </serverstats help:1148392150762000421>
         f30:
-          name: ⚙️ ┆ Configuraciones
+          name: ⚙️ ┆ Setup
           value: </setup help:1148392150762000422>
         f31:
-          name: 🎛 ┆ Panel de Sonidos
+          name: 🎛 ┆ Soundboard
           value: </soundboard help:1148392150988496927>
         f32:
-          name: 🗨️ ┆ Mensajes Fijados
+          name: 🗨️ ┆ Sticky messages
           value: </stickymessages help:1148392150988496928>
         f33:
-          name: 💡 ┆ Sugerencias
+          name: 💡 ┆ Suggestions
           value: </sugerencias help:1148392150988496929>
         f34:
-          name: 🤝 ┆ Agradecimientos
+          name: 🤝 ┆ Thanks
           value: </thanks help:1148392150988496930>
         f35:
           name: 🎫 ┆ Tickets
           value: </tickets help:1148392150988496931>
         f36:
-          name: ⚒️ ┆ Herramientas
+          name: ⚒️ ┆ Tools
           value: </tools help:1148392150988496932>
         f37:
-          name: 🔊 ┆ Voz
+          name: 🔊 ┆ Voice
           value: </voice help:1148392150988496934>
       buttons:
-        b1: Invitar
-        b2: Servidor de Soporte
+        b1: Invite
+        b2: Support Server
     invite:
       embed:
-        title: 📨・Invitar
-        desc: Haz lucir tu servidor mejor con OmenBot!
+        title: 📨・Invite
+        desc: Make your server even better with the OmenBot!
     support:
       embed:
-        title: ❓・Soporte
-        desc: Únete a nuestro servidor de Soporte!
+        title: ❓・Support
+        desc: Join to our Suport Server!
     changelog:
       embed:
-        title: 📃・Registro de Cambios
-        desc: Este es el Regsitro de Cambios de OmenBot en la versión **v2.1.1**
+        title: 📃・Changelogs
+        desc: This is the ChangeLog of OmenBot with version **v2.1.1**
         fields:
           f1:
             name: 📃┆ 14/09/2023
-            value: "```diff\n+ Sistema de Idiomas\n+ AutoDetectar Idioma\n+ Traducciones\n+ Comandos NSFW\n- Archivoos Innecesarios\n- Bases de datos Innecesarias```"
+            value: "```diff\n+ Language System\n+ AutoDetect Language\n+ Translation\n+ NSFW commands\n- Useless files\n- Useless Databases```"
           f2: 
             name: 📃┆ 19/01/2023
-            value: "```diff\n+ Inicio del Proyecto```"
+            value: "```diff\n+ Start of the project```"
 
 ## SlashCommands Configuration ##
 
 commands:
   content:
-    warnings: • Avisos
-    warn: • Avisar Usuario
-    unwarn: • Quitar Aviso
-    user: • Información Usuario
-    translate: • Traducir
-    steal: • Robar Emoji
-    gay: • Calcular Gay
+    warnings: • Warnings
+    warn: • Warn User
+    unwarn: • UnWarn User
+    user: • User Info
+    translate: • Translate
+    steal: • Steal emoji
+    gay: • How Gay
   slash:
     setup:
-      name: configuracion
-      description: Configura tu servidor
+      name: setup
+      description: Manage the Bot Setups
       help:
-        name: ayuda
-        description: Obtén información sobre la categoria de configuración
+        name: help
+        description: Get information about the setup category commands
       tickets:
         name: tickets
-        description: Configura los Tickets
+        description: Setup the tickets
         options:
           category:
-            name: categoria
-            description: Selecciona en que categoria irán los tickets
+            name: category
+            description: Select a category where the tickets should come in
           role:
-            name: rol
-            description: Selecciona el rol de Soporte
+            name: role
+            description: Select the support role
           channel:
-            name: canal
-            description: Selecciona el canal donde se enviara el panel
+            name: channel
+            description: The channel for the ticket panel
           logs:
             name: logs
-            description: El canal de Logs de tickets
+            description: The channel for the ticket logs
       suggestion:
-        name: sugerencias
-        description: Configura el sistema de sugerencias
+        name: suggestion
+        description: Setup suggestion system
         options:
           channel:
-            name: canal
-            description: Canal de sugerencias
+            name: channel
+            description: The channel for suggestions
       customvoice:
-        name: voz-personales
-        description: Configura los canales de voz personales
+        name: customvoice
+        description: Setup the custom voice channels
         options:
           category:
-            name: categoria
-            description: Selecciona la categoria donde irán estos canales
+            name: category
+            description: Select a category where the channels come in
           channelname:
-            name: nombre-canal
-            description: El nombre de los canales generados
+            name: channel-name
+            description: The template for the channel names
       logs:
         name: logs
-        description: Configura los logs del servidor
+        description: Set the logs from the server
         options: 
           setup:
-            name: configuraciones
-            description: Que configuración quieres
+            name: setup
+            description: The setup that you want
             choices:
-              sl: Logs del Servidor
-              ll: Logs de Niveles
-              bl: Logs de Boosteos
+              sl: Server logs
+              ll: Level logs
+              bl: Boost Logs
           channel: 
-            name: canal
-            description: El canal donde irán los logs
+            name: channel
+            description: The channel for the logs
       fun:
-        name: diversion
-        description: Configura los canales de diversión del servidor
+        name: fun
+        description: Set the fun channels from the server
         options:
           setup:
-            name: configuraciones
-            description: Que configuración quiere
+            name: setup
+            description: The setup that you want
             choices:
-              bd: Cumpleaños
-              cb: Chat del bot
-              rw: Reseñas/Valoraciones
-              sb: Mensajes destacados
+              bd: Birthdays
+              cb: Chat Bot
+              rw: Reviews
+              sb: Starboard
           channel:
-            name: canal
-            description: En que canal lo quiere
+            name: channel
+            description: The channel for the fun
       games:
-        name: juegos
-        description: Configura los juegos del servidor
+        name: games
+        description: Set the game channels from the server
         options: 
           setup:
-            name: configuraciones
-            description: Que configuración quiere
+            name: setup
+            description: The setup that you want
             choices:
-              cg: Contador
-              gtn: Encontras el Número
-              gtw: Encontrar la Palabra
+              cg: Counting
+              gtn: Guess The Number
+              gtw: Guess The Word
               ws: Word Snake
           channel:
-            name: canal
-            description: En que canal quieres el juego
+            name: channel
+            description: The channel for the game
       welcomechannels: 
-        name: canal-bienvenida
-        description: Configura el canal de bienvenida/despedida
+        name: welcome-channels
+        description: Setup the welcome channels
         options:
           setup:
-            name: configuraciones
-            description: Que configuración quiere
+            name: setup
+            description: The setup that you want
             choices:
-              welcome: Bienvenida
-              leave: Despedida
+              welcome: Welcome Channel
+              leave: Leave Channel
           channel:
-            name: canal
-            description: En que canal lo quiere?
+            name: channel
+            description: The channel that you want
       welcomerole:
-        name: rol-bienvenida
-        description: Configura el rol de Bienvenida
+        name: welcome-role
+        description: Setup the welcome role
         options:
           role:
-            name: rol
-            description: Que rol quiere
+            name: role
+            description: The role that you want
       ticketpanel:
-        name: panel-tickets
-        description: Configura el panel de tickets
+        name: ticket-panel
+        description: Setup the ticket panel
         options:
           name:
-            name: nombre
-            description: El nombre que aparecerá en el panel
+            name: name
+            description: The name of the ticket panel
           description: 
-            name: descripcion
-            description: La descripción que aparecerá en el panel
+            name: description
+            description: The description of the ticket panel
       language:
-        name: idioma
-        description: Configura el idioma de tu servidor
+        name: language
+        description: Setup the language of your guild
       deletesetup:
-        name: eliminar-configuracion
-        description: Elimina la configuración hecha
+        name: delete-setup
+        description: Delete a Bot setup
         options:
           setup:
-            name: configuraciones
-            description: Que configuración quiere eliminar
+            name: setup
+            description: The setup that you want
             choices:
               t: Tickets
-              ss: Sugerencias
-              cv: Voz Personalizada
-              sl: Logs del Servidor
-              ll: Logs de Niveles
-              bl: Logs de Boosteos
-              bd: Cumpleaños
-              cb: Chat del Bot
-              rw: Reseñas/Valoraciones
-              ct: Contador
-              gtn: Encuentra el Número
-              gtw: Encuentra la Palabra
-              wc: Canal de Bienvenida
-              lc: Canal de Despedida
-              wr: Roles de Bienvenida
+              ss: Suggestions
+              cv: Custom Voice
+              sl: Server Logs
+              ll: Level Logs
+              bl: Boost Logs
+              bd: Birthdays
+              cb: Chat Bot
+              rw: Reviews
+              ct: Counting
+              gtn: Guess the Number
+              gtw: Guess the Word
+              wc: Welcome Channel
+              lc: Leave Channel
+              wr: Welcome Roles
               ws: Word Snake
+
+
+#Bot Commands              
     bot:
       name: bot
-      description: Información acerda de OmenBot
+      description: Information about OmenBot
       help:
-        name: ayuda
-        description: Obten información sobre la categoria de comandos Bot
+        name: help
+        description: Get information about the bot category commands
       info:
         name: info
-        description: Obtén información sobre OmenBot
+        description: Get information about OmenBot
       ping:
         name: ping
-        description: Mira el Ping de OmenBot
+        description: See OmenBot ping in ms
       changelogs:
-        name: registro-de-cambios
-        description: Obtén el Registro de Cambios de OmenBot
+        name: changelogs
+        description: Get the changelogs of OmenBot
       links:
-        name: enlaces
-        description: Obtén un mensaje con los enlaces de OmenBOt
+        name: links
+        description: Get a message with all OmenBot links
       owner:
-        name: creador
-        description: Obtén información sobre su creador
+        name: owner
+        description: Get info about the owner
       socials:
-        name: redes-sociales
-        description: Obtén las Redes Sociales de OmenBot
+        name: socials
+        description: Get the OmenBot socials
       support:
-        name: soporte
-        description: Obtén la invitación al servidor de Soporte de OmenBot
+        name: support
+        description: Get an invite of the support server
       uptime:
-        name: tiempo-activo
-        description: Muestra el tiempo que lleva activo OmenBot
+        name: uptime
+        description: Show the OmenBot uptime
       feedback:
-        name: comentario
-        description: Envia un comentario de tu experiencia con OmenBot
+        name: feedback
+        description: Send your feedback about OmenBot
         message:
-          name: mensaje
-          description: Escribe aquí su comentario
+          name: message
+          description: Write here your feedback
     help:
       name: ayuda
-      description: Obtén ayuda de OmenBot
+      description: Obtén ayuda e información del bot
     nsfw:
       name: nsfw
-      description: Comandos NSFW
+      description: NSFW Commands
       hentai:
         name: hentai
-        description: Comandos Hentai
+        description: Hentai Commands
         vanilla:
           name: vanilla
-          description: Comandos Hentai Vanilla
+          description: Hentai Vanilla Commands
           options:
-            name: opciones
-            description: Opciones vanilla de Hentai
+            name: options
+            description: Vanilla Hentai Options
           repeat:
-            name: repeticiones
-            description: Repite el comando?
+            name: repeats
+            description: Repeat the Command?
         lewd:
           name: lewd
-          description: Comandos Hentai Lewd
+          description: Hentai Lewd Commands
           options:
-            name: opciones
-            description: Opciones LEWD de Hentai
+            name: options
+            description: Hentai LEWD Options
           repeat:
-            name: repeticiones
-            description: Repite el comando?
+            name: repeats
+            description: Repeat the Command?
       neko:
         name: neko
-        description: Comandos NSFW neko
+        description: Nsfw neko Commands
         options:
-          name: opciones
-          description: Opciones para las imagenes de Nekos
+          name: options
+          description: Options of Neko Images
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       booru:
         name: booru
-        description: Buscar imagenes en booru
+        description: Search NSFW images on booru
         sites:
-          name: paginas
-          description: En que pagina quieres buscar las imagenes?
+          name: sites
+          description: On what sites you want to search?
         tags:
-          name: etiquetas
-          description: Etiquetas de las imagenes
+          name: tags
+          description: What tags you want
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       waifu:
         name: waifu
-        description: Buscar imagenes NSFW en waifu.pics
+        description: Search NSFW images on waifu.pics
         category: 
-          name: categoria
-          description: Que categoria quieres?
+          name: category
+          description: What category you want?
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       waifu2:
         name: waifu2
-        description: Buscar imagenes NSFW en waifu.im
+        description: Search NSFW images on waifu.im
         category: 
-          name: categoria
-          description: Que categoria quieres?
+          name: category
+          description: What category you want?
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       real:
         name: real
-        description: Buscar imagenes de porno real
+        description: Search real porn images
         category: 
-          name: categoria
-          description: Que categoria quieres?
+          name: category
+          description: What category you want?
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       real2:
         name: real2
-        description: Buscar imagenes de porno real
+        description: Search real porn images
         category: 
-          name: categoria
-          description: Que categoria quieres?
+          name: category
+          description: What category you want?
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
       hentai2:
         name: hentai2
-        description: Buscar imagenes Hentai
+        description: Search Hentai images
         category: 
-          name: categoria
-          description: Que categoria quieres?
+          name: category
+          description: What category you want?
         repeat:
-          name: repeticiones
-          description: Repite el comando?
+          name: repeats
+          description: Repeat the Command?
     test:
-      name: tutoriales
-      description: Enviar el panel de tutoriales
+      name: tutorials
+      description: Send the tutorial's pannel
     activities:
-      name: actividades
-      description: Inicia una actividad
+      name: activities
+      description: Start a activity
       activity:
-        name: actividad
-        description: La actividad que quieres
+        name: activity
+        description: The activity that you want
     autorol:
-      name: dar-rol
-      description: Dar un rol a todos los miembros de este servidor.
+      name: give-all-role
+      description: Give role to all members on this guild.
       role:
-        name: rol
-        description: El rol que quieres dar.
+        name: role
+        description: The role you want to give.
+banner: https://omenlist.xyz/public/OB_banner_es.gif

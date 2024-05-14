@@ -3,7 +3,7 @@ const generator = require('generate-password');
 const Schema = require('../../database/models/functions')
 
 module.exports = (client, err, command, interaction) => {
-    const settings = Schema.findOne({ Guild: interaction.guild.id });
+    const settings = await Schema.findOne({ Guild: interaction.guild.id });
 	const getMessage = global.i18n.getLocale(settings.Locale);
     console.log(err);
     const password = generator.generate({

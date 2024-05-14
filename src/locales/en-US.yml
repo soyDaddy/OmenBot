@@ -1,8 +1,174 @@
 
 ## Command Response ##
-
+help:
+  menu:
+    options:
+      select: • Select a menu
+      helpCenter:
+        embed:
+          title: 🧩 • Help Center
+          footer: 🧩 Help Center || OmenBot
+          fields:
+            f1: 
+              name: • Help Center
+              value: "> Displays this menu."
+            f2:
+              name: • API
+              value: "> Get information on API."
+            f3:
+              name: • Commands
+              value: "> Get information on commands."
+              
+        label: • Help Center
+        description: Navigate to the Help Center.
+      api:
+        embed:
+          title: • API Info Page
+          footer: 🧩 API Info Page
+          fields:
+            f1:
+              name: • API Basic Info
+              value: "> Name: OmenList API\n> URL: [api.omenlist.xyz](https://api.omenlist.xyz)\n> Version: 5.3"
+            f2:
+              name: • API Status Info
+              value: "> Status: **Online**\n> Ping: **{ping} ms**\n> Uptime: **{uptime}**"
+              valueError: "> Status: **Offline**\n> Ping: **Errored**"
+        label: • API
+        description: Navigate to the API information page.
+      commands:
+        label: • Commands
+        description: Navigate to the Bot commands page.
+birthday:
+  embed:
+    title: 🎉 ¡Happy Birthday!
+    desc: This is the birthday of **{user}**
+tickets:
+  action:
+    transcript:
+      embed:
+        title: "🎫・Transcript"
+        desc: "{emoji}・Saving transcription..."
+        save: "Transcript Saved"
+    rename:
+      embed:
+        title: "🎫・Ticket Info"
+        field1: "Ticket Renamed By"
+        field2: "Old Ticket Name"
+        field3: "New Ticket Name"
+    remove:
+      embed:
+        title: "🎫・Ticket Info"
+        desc: "User **{target}** was removed from the ticket by **<@{user}>**"
+    raise:
+      embed:
+        title: "🎫・Ticket Raised"
+        desc: "Ticket raised by **{user}**"
+    notice:
+      title: "⚠️・Notice"
+      desc: "Hi {user}, \n\nCan we still help you?\nIf you don't respond in less than **24 hours**, we will close the ticket\n\n- {guild} || Support"
+    lower:
+      title: "Ticket Demoted"
+      desc: "This ticket was demoted by **<@{user}>**"
+    info:
+      embed:
+        title: "Ticket Info"
+        fields:
+          name: "Ticket Name"
+          id: "Ticket ID"
+          created: "Created by"
+          claimed: "Claimed by"
+          channel: "Channel ID"
+    delete:
+      title: "⚠️・Ticket Deleted"
+      desc: "The Ticket has been deleted in **5s**"
+    create:
+      title: "⚙️・Ticket Created"
+      desc: "Your ticket has been created"
+      fields:
+        f1: 👤┆ Creator
+        f2: 📂┆ Channel
+        f3: ⏰┆ Date Creation
+      progress:
+        title: "{emoji}・ Progreso"
+        desc: You'r ticket will be open soon...
+    open:
+      embed:
+        title: "🔒・Ticket Opened"
+        reopen: "🔒・Ticket Reopened"
+        itsopen: "🔒・This ticket is already open"
+        desc: "Thank's for opening a ticket, our staff team will be there soon!\n\n🔒 - Close Ticket\n✋ - Claim Ticket\n📝 - Save Transcription\n🔔 - Notify User"
+    close: 
+      embedDM:
+        title: 🔒・Ticket Closed
+        msg: This is the ticket info and the ticket transcription
+        fields:
+          f1:
+            name: 👤┆ Closed by
+          f2:
+            name: 📄┆ Ticket ID
+          f3:
+            name: 💬┆ Server
+          f4:
+            name: 🔗┆ Transcription
+            value: "[Transcription URL]({transcriptURL})"
+      embedLogs:
+        title: 🔒・Ticket Closed
+        desc: This is the ticket info and the ticket transcription
+        fields:
+          f1:
+            name: 📘┆ Ticket ID
+          f2:
+            name: 👤┆ Closed by
+          f3: 
+            name: 👤┆ Opened by
+          f4: 
+            name: ✋┆ Claimed by
+          f5: 
+            name: ⏰┆ Date
+          f6: 
+            name: 🔗┆ Transcription
+            value: "[Transcription URL]({transcriptURL})"
+      embed:
+        title: 🔒・Ticket Closed
+        desc: "📝 - Save Transcription\n🔓 - Reopen Ticket\n⛔ - Delete Ticket"
+    title: Ticket System
+    unclaim: This ticket can be claimed again
+    claimed: "This ticket has been claimed, you will be assisted by <@{userId}>"
+    add: "Invited <@{user}> to this ticket"
+  err:
+    title: An error has occurred
+    claim: \`❌\`This ticket was no claimed
+    claimed: \`❌\`This ticket was already claimed
+    setup: \`❌\`The ticket system was no setup
+    closed: \`❌\`This ticket was already closed
+    noticket: \`❌\`This is not a ticket
+    noclaimed: \`❌\`You were not claimed this ticket
+    limit: \`❌\`You have reached the limit of tickets
+    noreason: No reason given
+    error: \`❌\`An error has occurred
+    open: \`❌\`Dont open this ticket
+    remove: \`❌\`Dont remove the Ticket Owner
 message:
-  select: ❌┇Nothing Selected
+  error:
+    embed:
+      des: An error has occurred
+      fields:
+        f1:
+          name: ❌┇Error Code
+        f2: 
+          name: ❌┇What do now?
+          value: Try again later or join to de support server and report this error!
+  event:
+    guildCreate:
+      title: Thanks for invite OmenBot to your server!
+      desc: We apreciate you to decide to use OmenBot on your server!
+      field:
+        name: 📨┆ Invite OmenBot to other server
+        value: Invite it by [clicking here](https://discord.com/oauth2/authorize?&client_id=1066471348282605700&scope=applications.commands+bot&permissions=8)
+      button1: Invite
+      button2: Support Server
+      button3: Web Page
+  select: ❌┇Nothing Selected 
   errnormal: Something went wrong
   errusage:
     desc: You dont used correctly the command
@@ -67,16 +233,8 @@ message:
             label: ChangeLog
             description: Show the ChangeLog of OmenBot
       embed:
-        title: ❓・Help panel
-        description: Welcome to Bot's help panel! We have made a small overview to help you! Make a choice via the menu below
+        title: • Commands
         description2: View all command categories in the bot here!
-        fields: 
-          name1: ❌ ┆ Menu doesn't work?
-          value1: Try resending the command. If you get no reaction, make sure you report the bug!
-          name2: 🪲 ┆ Found a bug?
-          value2: Report this with \`/report bug\`
-          name3: 🔗 ┆ Links
-          value3: '[Website](https://omenbot.com/) (UnderDevelopment) | [Invite](https://discord.com/api/oauth2/authorize?client_id=1066471348282605700&permissions=8&scope=bot%20applications.commands)'
     commands:
       fields:
         f1:
@@ -512,3 +670,4 @@ commands:
       role:
         name: role
         description: The role you want to give.
+banner: https://omenlist.xyz/public/OB_banner.gif
