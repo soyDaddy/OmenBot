@@ -21,7 +21,7 @@ OmenBot is a Discord bot with over 500 fully functional commands. It integrates 
 
 - Node.js (v18)
 - Discord.js
-- [Valid license](https://omenlist.xyz/license)
+- [Valid license](https://list.soydaddy.me/license)
 
 ## 📥 Installation
 
