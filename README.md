@@ -1,7 +1,7 @@
 # 🌟 OmenBot
 
 <p align="center">
-  <img src="https://omenlist.xyz/public/features/logo.png" alt="OmenBot Logo" style="width: 100%; max-width: 800px;">
+  <img src="https://list.soydaddy.me/public/OmenBot.png" alt="OmenBot Logo" style="width: 100%; max-width: 800px;">
 </p>
 
 [![License](https://img.shields.io/badge/license-CC0--1.0-blue)](https://creativecommons.org/publicdomain/zero/1.0/)
